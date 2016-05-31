@@ -9,10 +9,11 @@ This is just some random library copy to better understand Elixir. The simpler t
 This is currently not available on hex (and really shouldn't be). The package can be installed as:
 
   1. Add is_thirteen to your list of dependencies in `mix.exs`:
-
-        def deps do
-          [{:is_thirteen, git: "https://github.com/BuffaloCoder/is_thirteen"}]
-        end
+  ```elixir
+  def deps do
+    [{:is_thirteen, git: "https://github.com/BuffaloCoder/is_thirteen"}]
+  end
+  ```
 
   2. Then, update your dependencies:
 
@@ -42,4 +43,4 @@ You can import the IsThirteen library for cleaner syntax:
 
 ## License
 
-Just as the example library, this is released under the [WTFPL](http://www.wtfpl.net/txt/copying/) 
+Just as the original JS library, this is released under the [WTFPL](http://www.wtfpl.net/txt/copying/) 
