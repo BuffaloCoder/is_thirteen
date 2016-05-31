@@ -6,17 +6,40 @@ This is just some random library copy to better understand Elixir. The simpler t
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+This is currently not available on hex (and really shouldn't be). The package can be installed as:
 
   1. Add is_thirteen to your list of dependencies in `mix.exs`:
 
         def deps do
-          [{:is_thirteen, "~> 0.0.1"}]
+          [{:is_thirteen, git: "https://github.com/BuffaloCoder/is_thirteen"}]
         end
 
-  2. Ensure is_thirteen is started before your application:
+  2. Then, update your dependencies:
 
-        def application do
-          [applications: [:is_thirteen]]
-        end
+        $ mix deps.get
 
+## Usage
+
+Really as the name of package implies:
+
+        iex> 13 |> IsThirteen.is |> IsThirteen.thirteen?
+        true
+        
+        iex> 13.0 |> IsThirteen.is |> IsThirteen.thirteen?
+        true
+        
+        iex> "thirteen" |> IsThirteen.is |> IsThirteen.thirteen?
+        true
+        
+        iex> nil |> IsThirteen.is |> IsThirteen.thirteen?
+        false
+
+You can import the IsThirteen library for cleaner syntax:
+
+        iex> import IsThirteen
+        iex> 13 |> is |> thirteen?
+        true
+
+## License
+
+Just as the example library, this is released under the [WTFPL](http://www.wtfpl.net/txt/copying/) 
