@@ -1,12 +1,16 @@
 defmodule IsThirteen do
 
+  @moduledoc """
+  Base module for the IsThirteen library, for all your thirteen checking needs!
+  """
+
   @doc """
   Simply returns the value handed to it. Unnecessary really, but can be nice
   for visual parity purposes.
 
   ## Examples
 
-  iex> "thirteen" |> IsThirteen.is |> IsThirteen.thirteen?
+  iex> 'ThirteeN' |> IsThirteen.is |> IsThirteen.thirteen?
   true
 
   iex> nil |> IsThirteen.is |> IsThirteen.thirteen?
@@ -28,7 +32,7 @@ defmodule IsThirteen do
   """
   def thirteen?(13), do: true
   def thirteen?(13.0), do: true
-  def thirteen?("thirteen"), do: true
-  def thirteen?(_val), do: false
+  def thirteen?(val) when is_binary(val), do: val =~ ~r/\Athirteen\z/iu
+  def thirteen?(val), do: val |> to_string |> thirteen? # Check if the string version is thirteen, could be char list
 
 end
