@@ -41,6 +41,18 @@ You can import the IsThirteen library for cleaner syntax:
         iex> 13 |> is |> thirteen?
         true
 
+For even cleaner syntax, you can forgo Elixir conventions mentioned in the [Elixir Style Guide](https://github.com/niftyn8/elixir_style_guide) and use the is with parentheses followed by the rest of the notation:
+
+        iex> import IsThirteen
+        iex> is(13) |> thirteen?
+        true
+
+Finally, for the cleanest/best looking syntax, you can avoid Elixir conventions and skip the parentheses in the previous statement, since is will return the value handed to it.  Due to operator precedence, this will resolve to is( 13 |> thirteen?).
+
+        iex> import IsThirteen
+        iex> is 13 |> thirteen?  
+        true 
+
 ## License
 
 Just as the original JS library, this is released under the [WTFPL](http://www.wtfpl.net/txt/copying/) 
