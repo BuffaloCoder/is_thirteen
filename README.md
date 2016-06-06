@@ -19,7 +19,7 @@ This is currently not available on hex (and really shouldn't be). The package ca
 
         $ mix deps.get
 
-## Usage
+## Basic Usage
 
 Really as the name of package implies:
 
@@ -52,6 +52,25 @@ Finally, for the cleanest/best looking syntax, you can avoid Elixir conventions 
         iex> import IsThirteen
         iex> is 13 |> thirteen?  
         true 
+
+## Extra Features
+
+The following examples all expect `import IsThirteen` and `import IsThirteen.{ Math }` to have been entered.
+Directly from the original library:
+
+        # check your math skillz
+        iex> is 4 |> plus(5) |> thirteen?
+        false
+        iex> is 12 |> plus(1) |> thirteen?
+        true
+        iex> is 4 |> minus(12) |> thirteen?
+        false
+        iex> is 14 |> minus(1) |> thirteen?
+        true
+        iex> is 1 |> times(8) |> thirteen?
+        false
+        iex> is 26 |> divide_by(2) |> thirteen?
+        true
 
 ## License
 
