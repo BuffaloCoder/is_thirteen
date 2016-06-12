@@ -1,4 +1,5 @@
 defmodule IsThirteen do
+  @thirteen Application.get_env(:is_thirteen, :thirteen)
   import IsThirteen.Consts, only: [check_all_thirteens?: 1]
 
   @moduledoc """
@@ -31,7 +32,7 @@ defmodule IsThirteen do
   iex> "this is not thirteen" |> IsThirteen.thirteen?
   false
   """
-  def thirteen?(13), do: true
+  def thirteen?(@thirteen), do: true
   def thirteen?(13.0), do: true
   def thirteen?(val) when is_binary(val), do: check_all_thirteens?(val)
   def thirteen?(val), do: val |> to_string |> thirteen? # Check if the string version is thirteen, could be char list

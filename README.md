@@ -55,10 +55,10 @@ Finally, for the cleanest/best looking syntax, you can avoid Elixir conventions 
 
 ## Extra Features
 
-The following examples all expect `import IsThirteen` and `import IsThirteen.{ Math }` to have been entered.
+The following examples all expect `import IsThirteen` and `import IsThirteen.{ Math, Misc }` to have been entered.
 Directly from the original library:
 
-        # check your math skillz
+#### Check your math skillz
         iex> is 4 |> plus(5) |> thirteen?
         false
         iex> is 12 |> plus(1) |> thirteen?
@@ -70,6 +70,15 @@ Directly from the original library:
         iex> is 1 |> times(8) |> thirteen?
         false
         iex> is 26 |> divide_by(2) |> thirteen?
+        true
+
+
+#### Check out some other random functionality
+        iex> is "neetriht" |> backwards |> thirteen?
+        true
+        iex> is 10 |> within(2) |> of_thirteen?
+        false
+        iex> is 2003 |> year_of_birth?
         true
 
 ## License
