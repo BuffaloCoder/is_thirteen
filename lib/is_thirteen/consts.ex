@@ -4,6 +4,8 @@ defmodule IsThirteen.Consts do
   also contains the functions to check against these consts.
   """
   @constants [
+    "13", # string 13
+    "31", # 13 backwards
     "xiii", # Roman numeral 13
 
     "https:#en.wikipedia.org/wiki/This_Is_Thirteen", # Because it is thirteen
